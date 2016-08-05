@@ -1,0 +1,7 @@
+applications:
+- name: verify-stub
+  env:
+    RAILS_ENV: development
+    BUNDLE_WITHOUT: 'shenanigans' # without this, the buildpack excludes development:test
+  memory: 384M
+  command: rackup --port $PORT stub/stub_api_conf.ru
